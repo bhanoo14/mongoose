@@ -2,8 +2,10 @@ const User = require('./User.js')
 const mongoose = require('mongoose')
 const url = "mongodb://localhost:27017/myUsers"
 
-mongoose.connect(url, () => console.log("Connected to Database"), (e) => {
-    error.log(e.message)
+mongoose.connect(url).then(() => {
+    console.log("Connected to DataBase");
+}).catch((e) => {
+    console.log(e.message);
 })
 
 
